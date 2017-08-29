@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 
 import Output from "../components/Output";
+import Select from "../components/controls/Select";
 
 export default class Home extends React.Component {
   constructor(props){
@@ -21,7 +22,7 @@ export default class Home extends React.Component {
   getSampleText(){
     axios.get("https://baconipsum.com/api/?type=" + this.state.type  + "&paras=" + this.state.paras + "&format=" + this.state.html)
       .then((response) => {
-        this.setState({ text: response.data}, () => {
+        this.setState({ text: response.data }, () => {
           console.log(this.state);
         });
       })
@@ -30,9 +31,17 @@ export default class Home extends React.Component {
       })
   }
 
+  showHTML(e){
+    this.setState({ html: e }, this.getSampleText);
+  }
+
   render() {
     return (
       <div class="home">
+        <form class="format-container">
+          <label>Format:</label>
+          <Select value={ this.state.html } onChangeRoot={ this.showHTML.bind(this) } />
+        </form>
         <Output value = { this.state.text } />
       </div>
   )}

@@ -10,7 +10,7 @@ export default class Output extends React.Component{
 
   render(){
     return(
-      <div class="output">
+      <div class="ipsum-text">
         { this.props.value }
       </div>
     )
