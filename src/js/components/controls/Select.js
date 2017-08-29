@@ -19,7 +19,6 @@ export default class Select extends React.Component{
       <div clsas="format">
         <select class="format-control" onChange={ this.onChangeFloor.bind(this) }>
           <option value="text">text</option>
-          <option value="json">json</option>
           <option value="html">html</option>
         </select>
       </div>
