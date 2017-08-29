@@ -3,12 +3,13 @@ import axios from "axios";
 
 import Output from "../components/Output";
 import Select from "../components/controls/Select";
+import Length from "../components/controls/Length";
 
 export default class Home extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      type: "all-meat",
+      type: "meat-and-filler",
       paras: 4,
       html: 'text',
       text: ''
