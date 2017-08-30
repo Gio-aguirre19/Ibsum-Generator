@@ -8,16 +8,17 @@ export default class Select extends React.Component{
     }
   }
 
-  onChangeFloor(e){
+  onChangeFormat(e){
     this.setState({ value: e.target.value }, () => {
-      this.props.onChangeRoot(this.state.value);
+      //Sends prop value up a level
+      this.props.onChangeFormatRoot(this.state.value);
     });
   }
 
   render(){
     return(
-      <div clsas="format">
-        <select class="format-control" onChange={ this.onChangeFloor.bind(this) }>
+      <div class="format">
+        <select class="format-control" onChange={ this.onChangeFormat.bind(this) }>
           <option value="text">text</option>
           <option value="html">html</option>
         </select>
