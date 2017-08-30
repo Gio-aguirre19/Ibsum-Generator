@@ -33,15 +33,23 @@ export default class Home extends React.Component {
   }
 
   showHTML(e){
+    //Sets state and calls getSampleText Function
     this.setState({ html: e }, this.getSampleText);
+  }
+
+  changeParas(num){
+    //Sets state and calls getSampleText Function
+    this.setState({ paras: num }, this.getSampleText);
   }
 
   render() {
     return (
       <div class="home">
         <form class="format-container">
+          <label>Length:</label>
+          <Length value={ this.state.paras } onChangeLengthRoot={ this.changeParas.bind(this) } />
           <label>Format:</label>
-          <Select value={ this.state.html } onChangeRoot={ this.showHTML.bind(this) } />
+          <Select value={ this.state.html } onChangeFormatRoot={ this.showHTML.bind(this) } />
         </form>
         <Output value = { this.state.text } />
       </div>
