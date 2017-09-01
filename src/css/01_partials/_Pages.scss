@@ -1,5 +1,10 @@
-.format-container{
+.format{
+  display: flex;
   text-align: center;
+
+  &__group{
+    flex: 1;
+  }
 }
 
 .ipsum-text{
