@@ -4,6 +4,7 @@ import axios from "axios";
 import Output from "../components/Output";
 import Select from "../components/controls/Select";
 import Length from "../components/controls/Length";
+import Meat from "../components/controls/MeatOrFiller";
 
 export default class Home extends React.Component {
   constructor(props){
@@ -42,14 +43,27 @@ export default class Home extends React.Component {
     this.setState({ paras: num }, this.getSampleText);
   }
 
+  changeType(type){
+    //Sets state and calls getSampleText Function
+    this.setState({ type: type }, this.getSampleText);
+  }
+
   render() {
     return (
       <div class="home">
-        <form class="format-container">
-          <label>Length:</label>
-          <Length value={ this.state.paras } onChangeLengthRoot={ this.changeParas.bind(this) } />
-          <label>Format:</label>
-          <Select value={ this.state.html } onChangeFormatRoot={ this.showHTML.bind(this) } />
+        <form class="format">
+          <div class="format__group">
+            <label>Length:</label>
+            <Meat value={ this.state.type } onChangeTypeRoot={ this.changeType.bind(this) } />
+          </div>
+          <div class="format__group">
+            <label>Length:</label>
+            <Length value={ this.state.paras } onChangeLengthRoot={ this.changeParas.bind(this) } />
+          </div>
+          <div class="format__group">
+            <label>Format:</label>
+            <Select value={ this.state.html } onChangeFormatRoot={ this.showHTML.bind(this) } />
+          </div>
         </form>
         <Output value = { this.state.text } />
       </div>

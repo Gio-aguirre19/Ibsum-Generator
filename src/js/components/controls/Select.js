@@ -17,7 +17,7 @@ export default class Select extends React.Component{
 
   render(){
     return(
-      <div class="format">
+      <div class="format__select">
         <select class="format-control" onChange={ this.onChangeFormat.bind(this) }>
           <option value="text">text</option>
           <option value="html">html</option>

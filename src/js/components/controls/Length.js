@@ -17,7 +17,7 @@ export default class Length extends React.Component{
 
   render(){
     return(
-      <div class="Paragraph-Length">
+      <div class="format__length">
         <input class="form-control" type="number" value={ this.state.value } onChange={ this.onChangeLength.bind(this) } />
       </div>
     )

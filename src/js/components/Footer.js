@@ -4,7 +4,6 @@ var d = new Date();
 var Year = d.getFullYear();
 
 export default class Footer extends React.Component {
-
   render() {
     return (
       <footer>
